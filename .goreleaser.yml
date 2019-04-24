@@ -25,6 +25,19 @@ changelog:
     - '^docs:'
     - '^test:'
 # .goreleaser.yml
+brew:
+  # Name template of the recipe
+  # Default to project name
+  name: myproject
+
+  # Repository to push the tap to.
+  github:
+    owner: luke
+    name: homebrew-diceroller
+
+  # Template for the url.
+  # Default is "https://github.com/<repo_owner>/<repo_name>/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
+  url_template: "http://github.com/lukemilby/diceroller/releases/{{ .Tag }}/{{ .ArtifactName }}"
 release:
   github:
     owner: lukemilby
