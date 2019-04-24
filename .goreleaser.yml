@@ -9,6 +9,14 @@ before:
 builds:
 - env:
   - CGO_ENABLED=0
+brew:
+  name: diceroller
+  github:
+    owner: lukemilby
+    name: homebrew-diceroller
+  skip_upload: auto
+  homepage:  https://derp.com
+  description: Deliver Go binaries as fast and easily as possible
 archives:
 - replacements:
     darwin: Darwin
@@ -24,23 +32,3 @@ changelog:
     exclude:
     - '^docs:'
     - '^test:'
-# .goreleaser.yml
-brew:
-  # Name template of the recipe
-  # Default to project name
-  name: diceroller
-
-  # Repository to push the tap to.
-  github:
-    owner: lukemilby
-    name: homebrew-diceroller
-
-  # Template for the url.
-  # Default is "https://github.com/<repo_owner>/<repo_name>/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
-  url_template: "http://github.com/lukemilby/diceroller/releases/{{ .Tag }}/{{ .ArtifactName }}"
-  folder: Formula
-  skip_upload: false
-release:
-  github:
-    owner: lukemilby
-    name: homebrew-diceroller
