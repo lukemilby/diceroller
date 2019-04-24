@@ -24,3 +24,8 @@ changelog:
     exclude:
     - '^docs:'
     - '^test:'
+# .goreleaser.yml
+release:
+  github:
+    owner: lukemilby
+    name: homebrew-diceroller
