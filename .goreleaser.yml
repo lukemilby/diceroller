@@ -28,16 +28,18 @@ changelog:
 brew:
   # Name template of the recipe
   # Default to project name
-  name: myproject
+  name: diceroller
 
   # Repository to push the tap to.
   github:
-    owner: luke
+    owner: lukemilby
     name: homebrew-diceroller
 
   # Template for the url.
   # Default is "https://github.com/<repo_owner>/<repo_name>/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
   url_template: "http://github.com/lukemilby/diceroller/releases/{{ .Tag }}/{{ .ArtifactName }}"
+  folder: Formula
+  skip_upload: false
 release:
   github:
     owner: lukemilby
