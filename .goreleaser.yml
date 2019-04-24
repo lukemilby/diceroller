@@ -9,14 +9,7 @@ before:
 builds:
 - env:
   - CGO_ENABLED=0
-brew:
-  name: diceroller
-  github:
-    owner: lukemilby
-    name: homebrew-diceroller
-  skip_upload: auto
-  homepage:  https://derp.com
-  description: Deliver Go binaries as fast and easily as possible
+
 archives:
 - replacements:
     darwin: Darwin
@@ -25,10 +18,19 @@ archives:
 checksum:
   name_template: 'checksums.txt'
 snapshot:
-  name_template: "{{ .Tag }}-alpha"
+  name_template: "{{ .Tag }}"
 changelog:
-  sort: asc
-  filters:
-    exclude:
-    - '^docs:'
-    - '^test:'
+  skip: true
+brew:
+  name: diceroller
+  github:
+    owner: lukemilby
+    name: homebrew-diceroller
+  commit_author:
+    name: goreleaserbot
+    email: goreleaser@carlosbecker.com
+  download_strategy: GitHubPrivateRepositoryReleaseDownloadStrategy
+  skip_upload: trueldawldalw
+  install: bin.install "diceroller"
+  description: Deliver Go binaries as fast and easily as possible
+  homepage: https://derp.com
